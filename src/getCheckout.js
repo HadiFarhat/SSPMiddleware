@@ -32,7 +32,8 @@ export default function (reqdata) {
           const customerId = reqdata.customerId; //Customer that you need to autologin;
           const storeHash = process.env.STORE_Hash; //store hash;
           const storeUrl = process.env.storeUrl; //store url;
-          const checkoutUrl = response.data.data.embedded_checkout_url; //Checkout URL;
+          //const checkoutUrl = response.data.data.embedded_checkout_url; //Checkout URL;
+          const checkoutUrl = response.data.data.checkout_url; //Checkout URL;
           
 
           const loginUrl = await getLoginUrl(
