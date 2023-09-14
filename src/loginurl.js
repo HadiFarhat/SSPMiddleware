@@ -48,9 +48,9 @@ export default async function getLoginUrl(
   };
   //console.log(payload);
   let token = jwt.sign(payload, clientSecret, { algorithm: "HS256" });
-  if (customerId === 0) {
-    return checkoutUrl
-  } else {
+  if (customerId > 0) {
     return `${storeUrl}/login/token/${token}`;
+  } else {
+    return checkoutUrl
   }
 }
